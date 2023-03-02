@@ -1,0 +1,15 @@
+<%- include('partials/header', {title: 'Home'}) -%>
+<img src="" alt="">
+<div>
+  <h1><%=pantryItem[0].name%></h1>
+  <%  if( pantryItem[0].is_fav === true) { %>
+  <i class="fa-solid fa-heart"></i>
+  <% } else { %>
+  <i class="fa-regular fa-heart"></i>
+  <% } %>
+  <p>Category: <%=pantryItem[0].category%></p>
+  <p>Quantity avaialble: <%=pantryItem[0].quantity%></p>
+
+  <p>Brand: <%=pantryItem[0].brand%></p>
+</div>
+<%- include('partials/footer') -%>

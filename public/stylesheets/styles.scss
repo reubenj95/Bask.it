@@ -10,3 +10,26 @@ body{
   color: #000;
   background-color: #fff;
 }
+ul{
+  list-style: none;
+}
+.pantryItem {
+  margin: 5px;
+  padding: 5px 15px;
+  max-width: 300px;
+  background-color: #bebebe;
+  border: 1px solid black;
+  border-radius: 5px;
+    .pantryBtn{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    #edit{
+      color: rgb(0, 182, 0);
+    }
+
+    #delete{
+      color: rgb(228, 0, 0);
+    }
+}
