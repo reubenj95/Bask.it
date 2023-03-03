@@ -36,7 +36,7 @@ router.get('/', async function (req, res, next) {
 })
 
 // Update
-router.get('/pantry/:itemId/edit', async function (req, res) {
+router.get('/pantry/:itemId', async function (req, res) {
   let { itemId } = req.params
   let pantryItem = await getPantryItem(itemId)
   res.render('pantryItem', { pantryItem })

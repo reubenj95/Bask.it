@@ -1,15 +1,38 @@
-<%- include('partials/header', {title: 'Home'}) -%>
-<h1>Fridge List</h1>
-<form action="/" method="POST">
-  <input type="text" name="newItem" placeholder="Start typing here..." id="newItem">
-  <button type="submit" value="addItem">Add item</button>
-</form>
-<div>
-  <ul>
-    <% list.reverse().forEach((item) => {%>
-      <li class="pantryItem" id="<%=item.id%>"><%=item.name%> - <%=item.quantity%> <br> 
-        <a href="/pantry/<%=item.id%>/edit"><span class="pantryBtn" id="edit">Edit</span></a> | <span class="pantryBtn" id="delete">Delete</span></li>
-    <% })%>
-  </ul>
-</div>
-<%- include('partials/footer') -%>
+<%- include('partials/header', {title: 'Home' }) -%>
+  <div class="container-fluid">
+    <div class="container" id="fridge-form">
+      <h1>Start typing to add to your grocery list</h1>
+      <form action="/" method="POST">
+        <input type="text" name="newItem" placeholder="Start typing here..." id="newItem" class="form-control-lg">
+        <button class="btn btn-outline-success btn-lg" type="submit" value="addItem">Add item</button>
+      </form>
+    </div>
+    <hr id="fridge-divider">
+    <div class="container" id="fridge-item-container">
+      <ul>
+        <% list.reverse().forEach((item)=> {%>
+          <div class="swipe-container">
+            <div class="action left">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="swipe-element">
+              <li class="pantryItem" id="<%=item.id%>">
+                <span class="item-qty">
+                  <%=item.quantity%>
+                </span>
+                  <%=item.name%>
+                  <div>
+                    <a href="/pantry/<%=item.id%>/edit"><span class="pantryBtn" id="edit">Edit</span></a> | <span
+                      class="pantryBtn" id="delete">Delete</span>
+                  </div>
+              </li>
+            </div>
+            <div class="action right">
+              <i class="fa-solid fa-pen"></i>
+            </div>
+          </div>
+          <% })%>
+      </ul>
+    </div>
+  </div>
+  <%- include('partials/footer') -%>
