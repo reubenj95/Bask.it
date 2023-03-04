@@ -12,6 +12,7 @@ body{
 }
 ul{
   list-style: none;
+  padding-left: 0;
 }
 
 #fridge-item-container{
@@ -21,7 +22,7 @@ ul{
 .pantryItem {
   display: flex;
   justify-content: space-between;
-  margin: 5px;
+  margin: 5px auto;
   padding: 20px 15px;
   max-width: 300px;
   border-bottom: 1px solid black;

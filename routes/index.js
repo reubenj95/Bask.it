@@ -31,6 +31,12 @@ router.post('/', async (req, res) => {
 // Read
 router.get('/', async function (req, res, next) {
   let list = await displayPantry()
+  document.querySelectorAll('.pantryItem'),
+    forEach((element) =>
+      element.addEventListener('touchend', function (event) {
+        handleSwipe(event)
+      })
+    )
   res.render('index', { list })
   // res.send(list)
 })
